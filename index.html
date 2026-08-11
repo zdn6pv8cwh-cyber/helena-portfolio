@@ -12,8 +12,8 @@
 <style>
   :root{
     --paper:#F3ECDC;
-    --ink:#15161A;
-    --ink-soft:#5C5B54;
+    --ink:#000000;
+    --ink-soft:#000000;
     --blue:#86A9C4;
     --coral:#E38A5C;
     --pink:#E9A8C4;
@@ -52,7 +52,8 @@
   .photo-rect{width:300px;height:400px;background:linear-gradient(135deg,var(--blue),var(--coral),var(--pink));}
   .about-grid .desc{font-size:14.5px;line-height:1.7;letter-spacing:0.04em;color:var(--ink-soft);max-width:520px;height:96px;overflow:hidden;}
   .tags{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
-  .tag{font-size:11.5px;font-family:'Inter',sans-serif;border:1px solid var(--rule);border-radius:20px;padding:4px 12px;color:var(--ink-soft);}
+  .tag{font-size:11.5px;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;padding:8px 16px;color:var(--ink-soft);text-decoration:none;display:inline-block;transition:font-weight 0.15s;}
+  .tag:hover{font-weight:700;}
 
   .acc-item{border-top:1px solid var(--rule);}
   .acc-item:first-child{border-top:none;}
@@ -66,11 +67,11 @@
   .acc-item.open .acc-panel{display:grid;}
   .acc-panel .photo-rect{height:225px;}
   .acc-panel .desc{font-size:14px;line-height:1.6;letter-spacing:0.04em;color:var(--ink-soft);height:96px;overflow:hidden;}
-  .acc-panel .more{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--ink);text-decoration:underline;}
+  .acc-panel .more{margin-top:14px;display:inline-block;}
 
   .wissen-box{display:flex;justify-content:space-between;align-items:center;gap:24px;}
   .wissen-box p{font-size:14px;letter-spacing:0.04em;color:var(--ink-soft);max-width:400px;line-height:1.6;}
-  .cta{font-family:'Inter',sans-serif;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:none;background:none;padding:0;cursor:pointer;white-space:nowrap;color:var(--ink-soft);transition:font-weight 0.15s;}
+  .cta{font-family:'Inter',sans-serif;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;background:none;padding:8px 16px;cursor:pointer;white-space:nowrap;color:var(--ink-soft);transition:font-weight 0.15s;}
   .cta:hover{font-weight:700;}
 
   footer{padding:24px 48px;font-family:'Inter',sans-serif;font-size:11.5px;color:var(--ink-soft);display:flex;justify-content:space-between;}
@@ -109,8 +110,8 @@
       <div>
         <p class="desc">Studentin für Creative Communication and Brand Management. Arbeitet an der Schnittstelle von Strategie und Gestaltung, mit Fokus auf Markenidentität und narrativem Storytelling.</p>
         <div class="tags">
-          <span class="tag">Lebenslauf ↓</span>
-          <span class="tag">Zertifikate ↓</span>
+          <a class="tag" href="lebenslauf.pdf" download>Lebenslauf</a>
+          <a class="tag" href="zertifikate.pdf" download>Zertifikate</a>
         </div>
       </div>
     </div>
@@ -129,7 +130,7 @@
         <div class="photo-rect"></div>
         <div>
           <p class="desc">Narrative Kampagne für Nivea Men mit einer fünfteiligen Wander-Geschichte und dem Charakter Daniel als roter Faden.</p>
-          <a class="more" href="#">Mehr dazu</a>
+          <a class="more cta" href="projekt-nivea-men.html">Mehr dazu</a>
         </div>
       </div>
     </div>
@@ -144,7 +145,7 @@
         <div class="photo-rect"></div>
         <div>
           <p class="desc">Markteintrittsstrategie für alkoholfreien Wein in Südkorea, präsentiert im Rahmen des Kurses Global Marketing and Branding.</p>
-          <a class="more" href="#">Mehr dazu</a>
+          <a class="more cta" href="projekt-kolonne-null.html">Mehr dazu</a>
         </div>
       </div>
     </div>
@@ -159,7 +160,7 @@
         <div class="photo-rect"></div>
         <div>
           <p class="desc">Trend Innovation Radar mit neun Innovationskarten rund um die Zukunft der Deutschen Bahn, inklusive Sprechertexten.</p>
-          <a class="more" href="#">Mehr dazu</a>
+          <a class="more cta" href="projekt-research-innovation.html">Mehr dazu</a>
         </div>
       </div>
     </div>
@@ -174,7 +175,7 @@
         <div class="photo-rect"></div>
         <div>
           <p class="desc">Markenidentität für ein Weinlokal, entwickelt im Bachelor-Studium.</p>
-          <a class="more" href="#">Mehr dazu</a>
+          <a class="more cta" href="projekt-fein-wuerzig.html">Mehr dazu</a>
         </div>
       </div>
     </div>
