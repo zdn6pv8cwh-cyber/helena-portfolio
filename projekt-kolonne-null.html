@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Kolonne Null x South Korea</title>
+<style>
+  @font-face{font-family:'Playfair Display';src:url('fonts/PlayfairDisplay-Italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap;}
+  @font-face{font-family:'Inter';src:url('fonts/Inter-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Inter';src:url('fonts/Inter-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Inter';src:url('fonts/Inter-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;}
+</style>
+<style>
+  :root{
+    --paper:#F3ECDC;
+    --ink:#000000;
+    --ink-soft:#000000;
+    --blue:#86A9C4;
+    --coral:#E38A5C;
+    --pink:#E9A8C4;
+    --rule:#DBD0B6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{background:var(--paper);}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;letter-spacing:0.03em;min-height:100vh;}
+  .page{max-width:1040px;margin:0 auto;}
+
+  .hero{position:relative;height:280px;overflow:hidden;background:var(--paper);}
+  .blob{position:absolute;filter:blur(60px);opacity:0.75;}
+  .b1{width:420px;height:420px;background:var(--blue);left:-120px;top:-60px;}
+  .b2{width:640px;height:480px;background:var(--coral);left:32%;top:-140px;}
+  .b3{width:420px;height:420px;background:var(--pink);right:-140px;top:-20px;}
+  .hero-text{position:absolute;right:48px;top:50%;transform:translateY(-50%);text-align:right;z-index:2;}
+  .hero-text .line{font-family:'Inter',sans-serif;font-weight:700;font-size:34px;line-height:1.15;color:var(--ink);}
+  .hero-text .line.serif{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;letter-spacing:normal;}
+
+  section{padding:56px 48px;}
+  .label{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;}
+  .label .bold{font-family:'Inter',sans-serif;font-weight:700;font-size:22px;letter-spacing:0.005em;}
+  .back{font-family:'Inter',sans-serif;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;padding:8px 16px;color:var(--ink-soft);text-decoration:none;display:inline-block;transition:font-weight 0.15s;}
+  .back:hover{font-weight:700;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="hero-text">
+      <div class="line">Strategy.</div>
+      <div class="line serif">Creativity.</div>
+      <div class="line">Identity.</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="label"><span class="bold">Kolonne Null x South Korea</span></div>
+    <p style="max-width:600px;line-height:1.7;color:var(--ink-soft);font-size:14.5px;">Inhalt folgt.</p>
+    <a class="back" href="index.html" style="margin-top:32px;">Zurück zur Startseite</a>
+  </section>
+
+</div>
+</body>
+</html>
