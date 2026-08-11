@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Mockup</title>
+<style>
+  @font-face{font-family:'Playfair Display';src:url('fonts/PlayfairDisplay-Italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap;}
+  @font-face{font-family:'Inter';src:url('fonts/Inter-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Inter';src:url('fonts/Inter-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Inter';src:url('fonts/Inter-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;}
+</style>
+<style>
+  :root{
+    --paper:#F3ECDC;
+    --ink:#000000;
+    --ink-soft:#000000;
+    --blue:#86A9C4;
+    --coral:#E38A5C;
+    --pink:#E9A8C4;
+    --rule:#DBD0B6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{background:var(--paper);}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;letter-spacing:0.03em;min-height:100vh;}
+  .page{max-width:1040px;margin:0 auto;}
+
+  .hero{position:relative;height:280px;overflow:hidden;background:var(--paper);}
+  .blob{position:absolute;filter:blur(60px);opacity:0.75;}
+  .b1{width:420px;height:420px;background:var(--blue);left:-120px;top:-60px;}
+  .b2{width:640px;height:480px;background:var(--coral);left:32%;top:-140px;}
+  .b3{width:420px;height:420px;background:var(--pink);right:-140px;top:-20px;}
+  .hero-text{position:absolute;right:48px;top:50%;transform:translateY(-50%);text-align:right;z-index:2;}
+  .hero-text .line{font-family:'Inter',sans-serif;font-weight:700;font-size:34px;line-height:1.15;color:var(--ink);}
+  .hero-text .line.serif{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;letter-spacing:normal;}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:56px 48px;border-bottom:1px solid var(--rule);}
+  nav .name{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:22px;letter-spacing:normal;}
+  nav .links{display:flex;gap:32px;}
+  nav .links a{display:inline-block;font-size:12px;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;letter-spacing:0.04em;font-weight:400;transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  nav .links a.active{color:var(--ink);font-weight:500;}
+  nav .links a:hover{font-weight:700;transform:scale(1.12);}
+  .lang-toggle{display:inline-block;font-family:inherit;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:none;background:none;padding:0;cursor:pointer;color:var(--ink-soft);transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .lang-toggle:hover{font-weight:700;transform:scale(1.12);}
+
+  section{padding:56px 48px;border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:none;}
+  .label{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;}
+  .label .bold{font-family:'Inter',sans-serif;font-weight:700;font-size:22px;letter-spacing:0.005em;}
+  .label .italic{font-family:'Playfair Display',serif;font-style:italic;font-size:19px;letter-spacing:normal;color:var(--ink-soft);}
+
+  .about-grid{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start;}
+  .photo-rect{width:300px;height:400px;background:linear-gradient(135deg,var(--blue),var(--coral),var(--pink));}
+  .about-grid .desc{font-size:14.5px;line-height:1.7;letter-spacing:0.04em;color:var(--ink-soft);max-width:520px;height:96px;overflow:hidden;}
+  .tags{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
+  .tag{font-size:11.5px;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;padding:8px 16px;color:var(--ink-soft);text-decoration:none;display:inline-block;transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .tag:hover{font-weight:700;transform:scale(1.06);}
+
+  .acc-item{border-top:1px solid var(--rule);}
+  .acc-item:first-child{border-top:none;}
+  .proj-row{display:grid;grid-template-columns:300px 1fr 1fr 24px;gap:24px;align-items:center;padding:16px 0;cursor:pointer;}
+  .proj-row .p-name{font-size:15px;font-weight:500;}
+  .proj-row .p-type{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;letter-spacing:normal;color:var(--ink-soft);}
+  .proj-row .p-tag{font-size:11.5px;color:var(--ink-soft);text-align:left;}
+  .proj-row .dot{width:7px;height:7px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:none;border-radius:0;transform:rotate(45deg);justify-self:end;transition:transform 0.2s;margin-right:4px;}
+  .acc-item.open .proj-row .dot{transform:rotate(225deg);}
+  .acc-panel{display:none;grid-template-columns:300px 1fr;gap:24px;padding:0 0 24px;align-items:start;}
+  .acc-item.open .acc-panel{display:grid;}
+  .acc-panel .photo-rect{height:225px;}
+  .acc-panel .desc{font-size:14px;line-height:1.6;letter-spacing:0.04em;color:var(--ink-soft);height:96px;overflow:hidden;}
+  .acc-panel .more{margin-top:14px;display:inline-block;}
+
+  .wissen-box{display:flex;justify-content:space-between;align-items:center;gap:24px;}
+  .wissen-box p{font-size:14px;letter-spacing:0.04em;color:var(--ink-soft);max-width:400px;line-height:1.6;}
+  .cta{display:inline-block;font-family:'Inter',sans-serif;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;background:none;padding:8px 16px;cursor:pointer;white-space:nowrap;color:var(--ink-soft);transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .cta:hover{font-weight:700;transform:scale(1.06);}
+
+  footer{padding:24px 48px;font-family:'Inter',sans-serif;font-size:11.5px;color:var(--ink-soft);display:flex;justify-content:space-between;}
+  .footer-impressum{display:inline-block;font-family:inherit;font-size:11.5px;font-weight:400;color:var(--ink-soft);text-decoration:none;letter-spacing:0.04em;transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .footer-impressum:hover{font-weight:700;transform:scale(1.12);}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="hero-text">
+      <div class="line">Strategy.</div>
+      <div class="line serif">Creativity.</div>
+      <div class="line">Identity.</div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="name">Helena Soell</div>
+    <div class="links">
+      <a class="active" href="#ueber" data-de="Über mich" data-en="About">Über mich</a>
+      <a href="#portfolio" data-de="Portfolio" data-en="Portfolio">Portfolio</a>
+      <a href="#wissen" data-de="Wissen" data-en="Knowledge">Wissen</a>
+      <button class="lang-toggle" onclick="toggleLang()">DE</button>
+    </div>
+  </nav>
+
+  <section id="ueber">
+    <div class="label"><span class="bold" data-de="Über mich." data-en="About me.">Über mich.</span><span class="italic" data-de="In Kürze" data-en="In short">In Kürze</span></div>
+    <div class="about-grid">
+      <div class="photo-rect"></div>
+      <div>
+        <p class="desc">Studentin für Creative Communication and Brand Management. Arbeitet an der Schnittstelle von Strategie und Gestaltung, mit Fokus auf Markenidentität und narrativem Storytelling.</p>
+        <div class="tags">
+          <a class="tag" href="lebenslauf.pdf" download>Lebenslauf</a>
+          <a class="tag" href="zertifikate.pdf" download>Zertifikate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="label"><span class="bold" data-de="Portfolio." data-en="Portfolio.">Portfolio.</span><span class="italic" data-de="Fünf Arbeiten" data-en="Five works">Fünf Arbeiten</span></div>
+    <div class="acc-item">
+      <div class="proj-row" onclick="this.parentElement.classList.toggle('open')">
+        <span class="p-name">Nivea Men</span>
+        <span class="p-type">Narrative Kampagne</span>
+        <span class="p-tag">Master · Strategie</span>
+        <span class="dot"></span>
+      </div>
+      <div class="acc-panel">
+        <div class="photo-rect"></div>
+        <div>
+          <p class="desc">Narrative Kampagne für Nivea Men mit einer fünfteiligen Wander-Geschichte und dem Charakter Daniel als roter Faden.</p>
+          <a class="more cta" href="projekt-nivea-men.html">Mehr dazu</a>
+        </div>
+      </div>
+    </div>
+    <div class="acc-item">
+      <div class="proj-row" onclick="this.parentElement.classList.toggle('open')">
+        <span class="p-name">Kolonne Null x South Korea</span>
+        <span class="p-type">Marktanalyse</span>
+        <span class="p-tag">Master · Strategie</span>
+        <span class="dot"></span>
+      </div>
+      <div class="acc-panel">
+        <div class="photo-rect"></div>
+        <div>
+          <p class="desc">Markteintrittsstrategie für alkoholfreien Wein in Südkorea, präsentiert im Rahmen des Kurses Global Marketing and Branding.</p>
+          <a class="more cta" href="projekt-kolonne-null.html">Mehr dazu</a>
+        </div>
+      </div>
+    </div>
+    <div class="acc-item">
+      <div class="proj-row" onclick="this.parentElement.classList.toggle('open')">
+        <span class="p-name">Research in Innovation and Communication</span>
+        <span class="p-type">Trend Radar</span>
+        <span class="p-tag">Master · Strategie</span>
+        <span class="dot"></span>
+      </div>
+      <div class="acc-panel">
+        <div class="photo-rect"></div>
+        <div>
+          <p class="desc">Trend Innovation Radar mit neun Innovationskarten rund um die Zukunft der Deutschen Bahn, inklusive Sprechertexten.</p>
+          <a class="more cta" href="projekt-research-innovation.html">Mehr dazu</a>
+        </div>
+      </div>
+    </div>
+    <div class="acc-item">
+      <div class="proj-row" onclick="this.parentElement.classList.toggle('open')">
+        <span class="p-name">FEIN &amp; WÜRZIG</span>
+        <span class="p-type">Branding Weinlokal</span>
+        <span class="p-tag">Bachelor · Design</span>
+        <span class="dot"></span>
+      </div>
+      <div class="acc-panel">
+        <div class="photo-rect"></div>
+        <div>
+          <p class="desc">Markenidentität für ein Weinlokal, entwickelt im Bachelor-Studium.</p>
+          <a class="more cta" href="projekt-fein-wuerzig.html">Mehr dazu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wissen">
+    <div class="label"><span class="bold" data-de="Wissen." data-en="Knowledge.">Wissen.</span><span class="italic" data-de="Frag mich etwas" data-en="Ask me anything">Frag mich etwas</span></div>
+    <div class="wissen-box">
+      <p data-de="Eine durchsuchbare Sammlung aus Vorlesungsmaterial, Notizen und Feedback — mit KI direkt befragbar." data-en="A searchable collection of lecture material, notes and feedback — ask it directly with AI.">Eine durchsuchbare Sammlung aus Vorlesungsmaterial, Notizen und Feedback — mit KI direkt befragbar.</p>
+      <div class="cta" data-de="Wissensdatenbank öffnen" data-en="Open knowledge base">Wissensdatenbank öffnen</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Helena Soell, 2026</span>
+    <a href="impressum.html" class="footer-impressum">Impressum</a>
+    <span>Strategy. Creativity. Identity.</span>
+  </footer>
+
+</div>
+</body>
+<script>
+  function toggleLang(){
+    var isEn = document.body.classList.toggle('en');
+    document.querySelector('.lang-toggle').textContent = isEn ? 'EN' : 'DE';
+    document.querySelectorAll('[data-de]').forEach(function(el){
+      el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-de');
+    });
+  }
+</script>
+</html>
