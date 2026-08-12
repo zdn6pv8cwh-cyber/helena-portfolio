@@ -36,11 +36,11 @@
   nav{display:flex;align-items:center;justify-content:space-between;padding:56px 48px;border-bottom:1px solid var(--rule);}
   nav .name{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:22px;letter-spacing:normal;}
   nav .links{display:flex;gap:32px;}
-  nav .links a{font-size:12px;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;letter-spacing:0.04em;font-weight:400;transition:font-weight 0.15s;}
+  nav .links a{display:inline-block;font-size:12px;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;letter-spacing:0.04em;font-weight:400;transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
   nav .links a.active{color:var(--ink);font-weight:500;}
-  nav .links a:hover{font-weight:700;}
-  .lang-toggle{font-family:inherit;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:none;background:none;padding:0;cursor:pointer;color:var(--ink-soft);transition:font-weight 0.15s;}
-  .lang-toggle:hover{font-weight:700;}
+  nav .links a:hover{font-weight:700;transform:scale(1.12);}
+  .lang-toggle{display:inline-block;font-family:inherit;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:none;background:none;padding:0;cursor:pointer;color:var(--ink-soft);transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .lang-toggle:hover{font-weight:700;transform:scale(1.12);}
 
   section{padding:56px 48px;border-bottom:1px solid var(--rule);}
   section:last-of-type{border-bottom:none;}
@@ -50,10 +50,10 @@
 
   .about-grid{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start;}
   .photo-rect{width:300px;height:400px;background:linear-gradient(135deg,var(--blue),var(--coral),var(--pink));}
-  .about-grid .desc{font-size:14.5px;line-height:1.7;letter-spacing:0.04em;color:var(--ink-soft);max-width:520px;height:96px;overflow:hidden;}
+  .about-grid .desc{font-size:14.5px;line-height:1.7;letter-spacing:0.04em;color:var(--ink-soft);max-width:520px;margin-bottom:14px;}
   .tags{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
-  .tag{font-size:11.5px;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;padding:8px 16px;color:var(--ink-soft);text-decoration:none;display:inline-block;transition:font-weight 0.15s;}
-  .tag:hover{font-weight:700;}
+  .tag{font-size:11.5px;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;padding:8px 16px;color:var(--ink-soft);text-decoration:none;display:inline-block;transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .tag:hover{font-weight:700;transform:scale(1.06);}
 
   .acc-item{border-top:1px solid var(--rule);}
   .acc-item:first-child{border-top:none;}
@@ -71,12 +71,12 @@
 
   .wissen-box{display:flex;justify-content:space-between;align-items:center;gap:24px;}
   .wissen-box p{font-size:14px;letter-spacing:0.04em;color:var(--ink-soft);max-width:400px;line-height:1.6;}
-  .cta{font-family:'Inter',sans-serif;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;background:none;padding:8px 16px;cursor:pointer;white-space:nowrap;color:var(--ink-soft);transition:font-weight 0.15s;}
-  .cta:hover{font-weight:700;}
+  .cta{display:inline-block;font-family:'Inter',sans-serif;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;background:none;padding:8px 16px;cursor:pointer;white-space:nowrap;color:var(--ink-soft);transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .cta:hover{font-weight:700;transform:scale(1.06);}
 
   footer{padding:24px 48px;font-family:'Inter',sans-serif;font-size:11.5px;color:var(--ink-soft);display:flex;justify-content:space-between;}
-  .footer-impressum{font-family:inherit;font-size:11.5px;font-weight:400;color:var(--ink-soft);text-decoration:none;letter-spacing:0.04em;transition:font-weight 0.15s;}
-  .footer-impressum:hover{font-weight:700;}
+  .footer-impressum{display:inline-block;font-family:inherit;font-size:11.5px;font-weight:400;color:var(--ink-soft);text-decoration:none;letter-spacing:0.04em;transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .footer-impressum:hover{font-weight:700;transform:scale(1.12);}
 </style>
 </head>
 <body>
@@ -96,7 +96,7 @@
   <nav>
     <div class="name">Helena Soell</div>
     <div class="links">
-      <a class="active" href="#ueber" data-de="Über mich" data-en="About">Über mich</a>
+      <a class="active" href="#ueber" data-de="Über Helena" data-en="About Helena">Über Helena</a>
       <a href="#portfolio" data-de="Portfolio" data-en="Portfolio">Portfolio</a>
       <a href="#wissen" data-de="Wissen" data-en="Knowledge">Wissen</a>
       <button class="lang-toggle" onclick="toggleLang()">DE</button>
@@ -104,11 +104,12 @@
   </nav>
 
   <section id="ueber">
-    <div class="label"><span class="bold" data-de="Über mich." data-en="About me.">Über mich.</span><span class="italic" data-de="In Kürze" data-en="In short">In Kürze</span></div>
+    <div class="label"><span class="bold" data-de="Über Helena." data-en="About Helena.">Über Helena.</span><span class="italic" data-de="In Kürze" data-en="In short">In Kürze</span></div>
     <div class="about-grid">
       <div class="photo-rect"></div>
       <div>
-        <p class="desc">Studentin für Creative Communication and Brand Management. Arbeitet an der Schnittstelle von Strategie und Gestaltung, mit Fokus auf Markenidentität und narrativem Storytelling.</p>
+        <p class="desc">Helena studiert derzeit Creative Communication and Brand Management. Diesen Blick für das Zusammenspiel von Strategie und Gestaltung verdankt sie ihrem Hintergrund im Kommunikationsdesign, der ihr Wissen aus ganz unterschiedlichen Feldern eingebracht hat – heute zeigt sich das in ihrem Fokus auf Markenidentität und narratives Storytelling.</p>
+        <p class="desc">Wiederkehrende Themen in Helenas Arbeit sind Kommunikation, strategisches Denken und Kreativität. Darüber hinaus interessiert sie sich unter anderem für Führungstheorie und den Aufbau von Prozessen.</p>
         <div class="tags">
           <a class="tag" href="lebenslauf.pdf" download>Lebenslauf</a>
           <a class="tag" href="zertifikate.pdf" download>Zertifikate</a>
@@ -130,7 +131,7 @@
         <div class="photo-rect"></div>
         <div>
           <p class="desc">Narrative Kampagne für Nivea Men mit einer fünfteiligen Wander-Geschichte und dem Charakter Daniel als roter Faden.</p>
-          <a class="more cta" href="projekt-nivea-men.html">Mehr dazu</a>
+          <a class="more tag" href="projekt-nivea-men.html">Mehr dazu</a>
         </div>
       </div>
     </div>
@@ -145,7 +146,7 @@
         <div class="photo-rect"></div>
         <div>
           <p class="desc">Markteintrittsstrategie für alkoholfreien Wein in Südkorea, präsentiert im Rahmen des Kurses Global Marketing and Branding.</p>
-          <a class="more cta" href="projekt-kolonne-null.html">Mehr dazu</a>
+          <a class="more tag" href="projekt-kolonne-null.html">Mehr dazu</a>
         </div>
       </div>
     </div>
@@ -160,7 +161,7 @@
         <div class="photo-rect"></div>
         <div>
           <p class="desc">Trend Innovation Radar mit neun Innovationskarten rund um die Zukunft der Deutschen Bahn, inklusive Sprechertexten.</p>
-          <a class="more cta" href="projekt-research-innovation.html">Mehr dazu</a>
+          <a class="more tag" href="projekt-research-innovation.html">Mehr dazu</a>
         </div>
       </div>
     </div>
@@ -175,16 +176,16 @@
         <div class="photo-rect"></div>
         <div>
           <p class="desc">Markenidentität für ein Weinlokal, entwickelt im Bachelor-Studium.</p>
-          <a class="more cta" href="projekt-fein-wuerzig.html">Mehr dazu</a>
+          <a class="more tag" href="projekt-fein-wuerzig.html">Mehr dazu</a>
         </div>
       </div>
     </div>
   </section>
 
   <section id="wissen">
-    <div class="label"><span class="bold" data-de="Wissen." data-en="Knowledge.">Wissen.</span><span class="italic" data-de="Frag mich etwas" data-en="Ask me anything">Frag mich etwas</span></div>
+    <div class="label"><span class="bold" data-de="Wissen." data-en="Knowledge.">Wissen.</span><span class="italic" data-de="Frag etwas" data-en="Ask something">Frag etwas</span></div>
     <div class="wissen-box">
-      <p data-de="Eine durchsuchbare Sammlung aus Vorlesungsmaterial, Notizen und Feedback — mit KI direkt befragbar." data-en="A searchable collection of lecture material, notes and feedback — ask it directly with AI.">Eine durchsuchbare Sammlung aus Vorlesungsmaterial, Notizen und Feedback — mit KI direkt befragbar.</p>
+      <p data-de="Eine durchsuchbare Sammlung aus Vorlesungsmaterial, Notizen und Feedback, das Helena im Laufe des Semesters aufgebaut hat — mit KI direkt befragbar." data-en="A searchable collection of lecture material, notes and feedback that Helena has built up over the semester — directly askable with AI.">Eine durchsuchbare Sammlung aus Vorlesungsmaterial, Notizen und Feedback, das Helena im Laufe des Semesters aufgebaut hat — mit KI direkt befragbar.</p>
       <div class="cta" data-de="Wissensdatenbank öffnen" data-en="Open knowledge base">Wissensdatenbank öffnen</div>
     </div>
   </section>
