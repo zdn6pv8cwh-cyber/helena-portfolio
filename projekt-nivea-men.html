@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Nivea Men</title>
+<title>Nivea Men — Case Study</title>
 <style>
   @font-face{font-family:'Playfair Display';src:url('fonts/PlayfairDisplay-Italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap;}
   @font-face{font-family:'Inter';src:url('fonts/Inter-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
@@ -33,9 +33,35 @@
   .hero-text .line{font-family:'Inter',sans-serif;font-weight:700;font-size:34px;line-height:1.15;color:var(--ink);}
   .hero-text .line.serif{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;letter-spacing:normal;}
 
-  section{padding:56px 48px;}
-  .label{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:32px 48px;border-bottom:1px solid var(--rule);}
+  nav .name{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:18px;letter-spacing:normal;}
+  nav .tag{font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink-soft);}
+
+  section{padding:48px;border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:none;}
+  .label{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;}
   .label .bold{font-family:'Inter',sans-serif;font-weight:700;font-size:22px;letter-spacing:0.005em;}
+  .label .italic{font-family:'Playfair Display',serif;font-style:italic;font-size:19px;letter-spacing:normal;color:var(--ink-soft);}
+  .step-no{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--ink-soft);letter-spacing:normal;}
+
+  .desc{font-size:14.5px;line-height:1.7;letter-spacing:0.04em;color:var(--ink-soft);max-width:600px;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
+  .grid-2 img{width:100%;display:block;border:1px solid var(--rule);}
+  .full-img{width:100%;max-width:640px;display:block;border:1px solid var(--rule);margin-top:8px;}
+
+  .slogan{background:#0A2E7A;color:#F3ECDC;padding:36px 40px;margin-top:28px;text-align:center;}
+  .slogan p{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;letter-spacing:normal;max-width:520px;margin:0 auto;line-height:1.5;}
+
+  .route{margin-top:28px;padding-top:24px;border-top:1px dashed var(--rule);}
+  .route .tag-label{font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink-soft);margin-bottom:8px;display:block;}
+
+  .goals-list{margin-top:8px;}
+  .goal-row{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:14px 0;border-top:1px solid var(--rule);}
+  .goal-row:first-child{border-top:none;}
+  .goal-row .g-name{font-family:'Playfair Display',serif;font-style:italic;font-size:14.5px;letter-spacing:normal;}
+  .goal-row .g-desc{font-size:13.5px;line-height:1.6;color:var(--ink-soft);}
+
+  .caption{font-size:11px;color:var(--ink-soft);letter-spacing:0.04em;margin-top:8px;display:block;}
   .back{font-family:'Inter',sans-serif;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--rule);border-radius:0;padding:8px 16px;color:var(--ink-soft);text-decoration:none;display:inline-block;transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
   .back:hover{font-weight:700;transform:scale(1.06);}
 </style>
@@ -54,10 +80,50 @@
     </div>
   </div>
 
+  <nav>
+    <span class="name">Nivea Men</span>
+    <span class="tag">Case Study — Brand Management, Master</span>
+  </nav>
+
   <section>
-    <div class="label"><span class="bold">Nivea Men</span></div>
-    <p style="max-width:600px;line-height:1.7;color:var(--ink-soft);font-size:14.5px;">Inhalt folgt.</p>
-    <a class="back" href="index.html" style="margin-top:32px;">Zurück zur Startseite</a>
+    <div class="label"><span class="step-no">01</span><span class="bold">Ausgangslage.</span></div>
+    <p class="desc">NIVEA Men geniesst zwar hohe Bekanntheit, verliert aber an Konsistenz und emotionaler Relevanz: Produkt, Menschen und Kommunikation laufen nicht mehr im gleichen Bild zusammen.</p>
+    <img class="full-img" src="images/nivea-three-pillars.jpg" alt="Three Pillars of Nivea: Product, People, Communication">
+  </section>
+
+  <section>
+    <div class="label"><span class="step-no">02</span><span class="bold">Positionierung.</span></div>
+    <p class="desc">Aus der Analyse abgeleitet: eine klare, nutzbare Zielpositionierung als Grundlage für alles Weitere.</p>
+    <img class="full-img" src="images/nivea-target-positioning.jpg" alt="Target Positioning Statement">
+  </section>
+
+  <section>
+    <div class="label"><span class="step-no">03</span><span class="bold">Kampagnenidee.</span><span class="italic">Shared Moments</span></div>
+    <p class="desc">Die Hauptidee zeigt NIVEA Men als selbstverständlichen Teil des Alltags: eine Gruppe Freunde, ein gemeinsamer Ausflug, Momente von Nähe statt Hochglanz-Inszenierung. Ton und Bildwelt knüpfen bewusst an das Vertrauen und die Wärme an, die NIVEA historisch ausmachen.</p>
+    <img class="full-img" src="images/nivea-shared-moments-grid.jpg" alt="Shared Moments Bildwelt">
+
+    <div class="route">
+      <span class="tag-label">Alternative Route</span>
+      <p class="desc"><em style="font-family:'Playfair Display',serif;">Deine Wichtigsten</em> verfolgt den gleichen Anspruch mit anderem Mittel: Sprachnachrichten von den Menschen, die einem wichtig sind, begleiten drei Männer durch bedeutsame Tage – emotionale Nähe statt Produktversprechen, als zweite mögliche Richtung neben Shared Moments.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="label"><span class="step-no">04</span><span class="bold">Rückbezug zu den Zielen.</span></div>
+    <p class="desc">Was die Idee zu einer strategischen Leistung macht statt nur zu einer guten Idee: der explizite Abgleich mit den Kommunikationszielen.</p>
+    <div class="grid-2" style="margin-top:20px;align-items:center;">
+      <img src="images/nivea-fit-to-goals.jpg" alt="Fit to Communication Goals">
+      <div class="goals-list">
+        <div class="goal-row"><span class="g-name">Effortless Routine Adoption</span><span class="g-desc">Einfache, alltagstaugliche Szenen senken die Einstiegshürde.</span></div>
+        <div class="goal-row"><span class="g-name">Emotional Empowerment</span><span class="g-desc">Freundschaft und Verletzlichkeit stärken ein modernes Männlichkeitsbild.</span></div>
+        <div class="goal-row"><span class="g-name">Functional Credibility</span><span class="g-desc">Produktwirkung wird gezeigt statt behauptet.</span></div>
+        <div class="goal-row"><span class="g-name">Bridging the Comm. Gap</span><span class="g-desc">Alltägliche Nutzung macht Expertenwissen zugänglich.</span></div>
+      </div>
+    </div>
+
+    <div class="slogan"><p>Umgesetzt wurde am Ende die Kampagne „Effekte, die man einfach spürt" — dieselbe strategische Logik, in eine eigene Storyline übersetzt.</p></div>
+
+    <a class="back" href="index.html" style="display:inline-block;margin-top:36px;">Zurück zur Startseite</a>
   </section>
 
 </div>
