@@ -35,7 +35,10 @@
 
   nav{display:flex;align-items:center;justify-content:space-between;padding:32px 48px;border-bottom:1px solid var(--rule);}
   nav .name{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:18px;letter-spacing:normal;}
+  nav .right{display:flex;align-items:center;gap:24px;}
   nav .tag{font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink-soft);}
+  .lang-toggle{font-family:inherit;font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border:none;background:none;padding:0;cursor:pointer;color:var(--ink-soft);transform-origin:center;transition:font-weight 0.15s,transform 0.15s;}
+  .lang-toggle:hover{font-weight:700;transform:scale(1.12);}
 
   section{padding:48px;border-bottom:1px solid var(--rule);}
   section:last-of-type{border-bottom:none;}
@@ -82,37 +85,54 @@
 
   <nav>
     <span class="name">Nivea Men</span>
-    <span class="tag">Case Study — Brand Management, Master</span>
+    <div class="right">
+      <span class="tag" data-de="Case Study — Brand Management, Master" data-en="Case Study — Brand Management, Master's">Case Study — Brand Management, Master</span>
+      <button class="lang-toggle" onclick="toggleLang()">DE</button>
+    </div>
   </nav>
 
   <section>
-    <div class="label"><span class="step-no">01</span><span class="bold">Ausgangslage.</span></div>
-    <p class="desc">NIVEA Men geniesst zwar hohe Bekanntheit, verliert aber an Konsistenz und emotionaler Relevanz: Produkt, Menschen und Kommunikation laufen nicht mehr im gleichen Bild zusammen.</p>
-    <img class="full-img" src="images/nivea-three-pillars.jpg" alt="Three Pillars of Nivea: Product, People, Communication">
+    <div class="label"><span class="step-no">01</span><span class="bold" data-de="Ausgangslage." data-en="Starting Point.">Ausgangslage.</span></div>
+    <p class="desc">NIVEA Men profitiert zwar dank der langen Tradition von hoher Bekanntheit, verliert aber an Konsistenz und emotionaler Relevanz: Produkt, Menschen und Kommunikation laufen nicht im gleichen Markenbild zusammen. Diese Diskrepanz liegt nicht zuletzt daran, dass sich insbesondere die Bedürfnisse jüngerer Zielpersonen geändert haben. Sie legen Wert auf eine klare Markenidentitäten sowie transparente und aufrichtige Kommunikation. Darüber hinaus muss eine Marke heute über soziale Kanäle mit authentischen und nahbaren Inhalten werben und zugleich durch Expertise und spürbare Effekte überzeugen.</p>
+    <img class="full-img" src="images/nivea-communication-goals.jpg" alt="Communication Goals: Effortless Routine Adoption, Emotional Empowerment, Functional Credibility, Bridging the Communication Gap">
   </section>
 
   <section>
-    <div class="label"><span class="step-no">02</span><span class="bold">Positionierung.</span></div>
-    <p class="desc">Aus der Analyse abgeleitet: eine klare, nutzbare Zielpositionierung als Grundlage für alles Weitere.</p>
-    <img class="full-img" src="images/nivea-target-positioning.jpg" alt="Target Positioning Statement">
+    <div class="label"><span class="step-no">02</span><span class="bold" data-de="Positionierung." data-en="Positioning.">Positionierung.</span></div>
+    <p class="desc">Aus der Markt-, Konkurrenten- und Zielgruppenanalyse abgeleitet ergibt sich eine klare nutzbare Zielpositionierung. Kondensiert auf ein Key Insight, stellt sie die Grundlage für die Kampagnenideenentwicklung dar.</p>
+    <img class="full-img" src="images/nivea-target-positioning-full.jpg" alt="Target Positioning Statement">
+    <img class="full-img" src="images/nivea-key-insight.jpg" alt="Key Insight: Men don't build routines by buying more products, they simply buy results">
   </section>
 
   <section>
-    <div class="label"><span class="step-no">03</span><span class="bold">Kampagnenidee.</span><span class="italic">Shared Moments</span></div>
-    <p class="desc">Die Hauptidee zeigt NIVEA Men als selbstverständlichen Teil des Alltags: eine Gruppe Freunde, ein gemeinsamer Ausflug, Momente von Nähe statt Hochglanz-Inszenierung. Ton und Bildwelt knüpfen bewusst an das Vertrauen und die Wärme an, die NIVEA historisch ausmachen.</p>
-    <img class="full-img" src="images/nivea-shared-moments-grid.jpg" alt="Shared Moments Bildwelt">
+    <div class="label"><span class="step-no">03</span><span class="bold" data-de="Kampagnenidee." data-en="Campaign Idea.">Kampagnenidee.</span></div>
+    <div class="slogan" style="margin-top:0;margin-bottom:24px;"><p style="font-size:22px;">Effekte, die man einfach spürt</p></div>
+    <p class="desc">Die Hauptidee zeigt NIVEA Men als selbstverständlichen Teil des Alltags: eine Gruppe Freunde, ein gemeinsamer Ausflug, Momente von Nähe statt Hochglanz-Inszenierung. Auf dem Ausflug überzeugt einer der Freunde die anderen von der Nutzung von NIVEA Produkten, die sich organisch in die Szenen und Momente der gemeinsamen Erfahrung eingliedern — sie sind spürbar, stören aber nicht. Ton und Bildwelt knüpfen bewusst an das Vertrauen und die Wärme an, die NIVEA ausmachen.</p>
+    <img class="full-img" src="images/nivea-shared-moments-grid.jpg" alt="Bildwelt der Kampagne">
+  </section>
 
-    <div class="route">
-      <span class="tag-label">Alternative Route</span>
-      <p class="desc"><em style="font-family:'Playfair Display',serif;">Deine Wichtigsten</em> verfolgt den gleichen Anspruch mit anderem Mittel: Sprachnachrichten von den Menschen, die einem wichtig sind, begleiten drei Männer durch bedeutsame Tage – emotionale Nähe statt Produktversprechen, als zweite mögliche Richtung neben Shared Moments.</p>
+  <section>
+    <div class="label"><span class="step-no">04</span><span class="bold" data-de="Umsetzung." data-en="Execution.">Umsetzung.</span></div>
+    <p class="desc">Von Owned/Organic Media, Paid Media, über klassisches OOH lässt sich die Leitidee konsistent und dennoch in spannender Form auf unterschiedlichste gängige Ad- und Assets übertragen. Um die Menschen nicht nur zu erreichen, sondern auch zu involvieren, dienen die Activations, konzipiert in Form von Events, Giveaway und einer WG-Challenge.</p>
+    <img class="full-img" src="images/nivea-owned-media-website-full.jpg" alt="Owned Media: Website-Umsetzung">
+
+    <div class="grid-2" style="margin-top:24px;">
+      <img src="images/nivea-storyboard-vs-final-photos.jpg" alt="Storyboard neben finalen Aufnahmen">
+      <img src="images/nivea-youtube-ads.jpg" alt="YouTube Ad Formate">
+      <img src="images/nivea-paid-media.jpg" alt="Paid Media Formate">
+      <img src="images/nivea-event-01-brand-trip.jpg" alt="Event 01: NIVEA MEN Brand Trip">
+      <img src="images/nivea-event-01-photos.jpg" alt="Event 01: Impressionen">
+      <img src="images/nivea-event-02-wg-challenge.jpg" alt="Event 02: WG Challenge">
     </div>
+
+    <img class="full-img" src="images/nivea-funnel-logic.jpg" alt="Funnel Logic: von Reach zu Effect" style="margin-top:24px;">
   </section>
 
   <section>
-    <div class="label"><span class="step-no">04</span><span class="bold">Rückbezug zu den Zielen.</span></div>
+    <div class="label"><span class="step-no">05</span><span class="bold" data-de="Rückbezug zu den Zielen." data-en="Tying Back to the Goals.">Rückbezug zu den Zielen.</span></div>
     <p class="desc">Was die Idee zu einer strategischen Leistung macht statt nur zu einer guten Idee: der explizite Abgleich mit den Kommunikationszielen.</p>
     <div class="grid-2" style="margin-top:20px;align-items:center;">
-      <img src="images/nivea-fit-to-goals.jpg" alt="Fit to Communication Goals">
+      <img src="images/nivea-communication-goals.jpg" alt="Fit to Communication Goals">
       <div class="goals-list">
         <div class="goal-row"><span class="g-name">Effortless Routine Adoption</span><span class="g-desc">Einfache, alltagstaugliche Szenen senken die Einstiegshürde.</span></div>
         <div class="goal-row"><span class="g-name">Emotional Empowerment</span><span class="g-desc">Freundschaft und Verletzlichkeit stärken ein modernes Männlichkeitsbild.</span></div>
@@ -121,11 +141,18 @@
       </div>
     </div>
 
-    <div class="slogan"><p>Umgesetzt wurde am Ende die Kampagne „Effekte, die man einfach spürt" — dieselbe strategische Logik, in eine eigene Storyline übersetzt.</p></div>
-
-    <a class="back" href="index.html" style="display:inline-block;margin-top:36px;">Zurück zur Startseite</a>
+    <a class="back" href="index.html" style="display:inline-block;margin-top:36px;" data-de="Zurück zur Startseite" data-en="Back to Homepage">Zurück zur Startseite</a>
   </section>
 
 </div>
+<script>
+  function toggleLang(){
+    var isEn = document.body.classList.toggle('en');
+    document.querySelector('.lang-toggle').textContent = isEn ? 'EN' : 'DE';
+    document.querySelectorAll('[data-de]').forEach(function(el){
+      el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-de');
+    });
+  }
+</script>
 </body>
 </html>
