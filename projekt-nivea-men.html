@@ -51,8 +51,9 @@
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
   .grid-2 img{width:100%;display:block;border:1px solid var(--rule);}
   .full-img{width:100%;max-width:640px;display:block;border:1px solid var(--rule);margin-top:8px;}
+  .desc + .full-img{margin-top:20px;}
 
-  .slogan{background:#0A2E7A;color:#F3ECDC;padding:36px 40px;margin-top:28px;text-align:center;}
+  .slogan{background:#0A2E7A;color:#F3ECDC;padding:36px 40px;margin-top:28px;text-align:center;max-width:640px;}
   .slogan p{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;letter-spacing:normal;max-width:520px;margin:0 auto;line-height:1.5;}
 
   .route{margin-top:28px;padding-top:24px;border-top:1px dashed var(--rule);}
@@ -131,14 +132,11 @@
   <section>
     <div class="label"><span class="step-no">05</span><span class="bold" data-de="Rückbezug zu den Zielen." data-en="Tying Back to the Goals.">Rückbezug zu den Zielen.</span></div>
     <p class="desc">Was die Idee zu einer strategischen Leistung macht statt nur zu einer guten Idee: der explizite Abgleich mit den Kommunikationszielen.</p>
-    <div class="grid-2" style="margin-top:20px;align-items:center;">
-      <img src="images/nivea-communication-goals.jpg" alt="Fit to Communication Goals">
-      <div class="goals-list">
-        <div class="goal-row"><span class="g-name">Effortless Routine Adoption</span><span class="g-desc">Einfache, alltagstaugliche Szenen senken die Einstiegshürde.</span></div>
-        <div class="goal-row"><span class="g-name">Emotional Empowerment</span><span class="g-desc">Freundschaft und Verletzlichkeit stärken ein modernes Männlichkeitsbild.</span></div>
-        <div class="goal-row"><span class="g-name">Functional Credibility</span><span class="g-desc">Produktwirkung wird gezeigt statt behauptet.</span></div>
-        <div class="goal-row"><span class="g-name">Bridging the Comm. Gap</span><span class="g-desc">Alltägliche Nutzung macht Expertenwissen zugänglich.</span></div>
-      </div>
+    <div class="goals-list" style="margin-top:20px;max-width:700px;">
+        <div class="goal-row"><span class="g-name">Effortless Routine Adoption</span><span class="g-desc">Alltagsnahe und realistische Szenen senken die Einstiegshürde in die Pflegeroutine, während Empfehlungen aus dem Freundeskreis die Nutzungszufriedenheit erhöhen.</span></div>
+        <div class="goal-row"><span class="g-name">Emotional Empowerment</span><span class="g-desc">Freundschaft, Humor und ein selbstbewusstes Körpergefühl prägen ein zeitgemässes Männlichkeitsbild.</span></div>
+        <div class="goal-row"><span class="g-name">Functional Credibility</span><span class="g-desc">Die Produktwirkung wird nicht wörtlich behauptet, sondern über die funktionale Anwendung vor, während und nach dem Ausflug erlebbar gemacht und bestätigt.</span></div>
+        <div class="goal-row"><span class="g-name">Bridging the Communication Gap</span><span class="g-desc">Alltägliche Nutzung mit spürbarer Wirkung macht fachliche Expertise zugänglich und lädt zur Vertiefung in die Thematik der kosmetischen Hautpflege ein.</span></div>
     </div>
 
     <a class="back" href="index.html" style="display:inline-block;margin-top:36px;" data-de="Zurück zur Startseite" data-en="Back to Homepage">Zurück zur Startseite</a>
